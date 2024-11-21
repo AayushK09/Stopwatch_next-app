@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import styles from '../styles/Stopwatch.module.css'; // Import the CSS module
-import Draggable from 'react-draggable'; // Import react-draggable
 
 const Stopwatch = () => {
   const [time, setTime] = useState(0);
