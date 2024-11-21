@@ -1,19 +1,19 @@
 import { useState, useRef } from 'react';
-import styles from '../styles/Stopwatch.module.css'; // Import the CSS module
+import styles from '../styles/Stopwatch.module.css';
 
 const Stopwatch = () => {
   const [time, setTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false); // Track if the stopwatch has ever started
+  const [hasStarted, setHasStarted] = useState(false);
   const timerRef = useRef(null);
 
   const startStopwatch = () => {
     if (!isRunning) {
       setIsRunning(true);
-      setHasStarted(true); // Mark as started
+      setHasStarted(true);
       timerRef.current = setInterval(() => {
-        setTime((prevTime) => prevTime + 10); // Increment time in milliseconds
+        setTime((prevTime) => prevTime + 10);
       }, 10);
     }
   };
@@ -25,7 +25,7 @@ const Stopwatch = () => {
 
   const resetStopwatch = () => {
     setIsRunning(false);
-    setHasStarted(false); // Reset to initial state
+    setHasStarted(false);
     clearInterval(timerRef.current);
     setTime(0);
   };
